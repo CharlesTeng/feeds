@@ -14,7 +14,7 @@ include $(INCLUDE_DIR)/package.mk
 
 define Package/schd
   SECTION:=schd
-  CATEGORY:=Base system 
+  CATEGORY:=Base system
   DEFAULT:=y
   TITLE:=Extra filesystem for OpenWrt(schedule)
   DEPENDS:=+ubusd +ubus +libjson-script +ubox +USE_EGLIBC:librt +libubox +libubus
@@ -43,6 +43,7 @@ endef
 #endef
 
 define Package/schd/install
+	$(CP) $(PKG_BUILD_DIR)/files/* $(1)/
 	$(INSTALL_DIR) $(1)/sbin 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/schd $(1)/sbin/
 # build package
