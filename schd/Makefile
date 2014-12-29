@@ -43,7 +43,7 @@ endef
 #endef
 
 define Package/schd/install
-	$(CP) $(PKG_BUILD_DIR)/files/* $(1)/
+#	$(CP) $(PKG_BUILD_DIR)/files/* $(1)/
 	$(INSTALL_DIR) $(1)/sbin 
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/schd $(1)/sbin/
 # build package

@@ -6,7 +6,7 @@ NLLIBNAME = libubus
 LIBS += -lubus -lubox
 LIBS += $(shell $(PKG_CONFIG) --libs $(NLLIBNAME))
 CFLAGS += $(shell $(PKG_CONFIG) --cflags $(NLLIBNAME))
-OBJS = ubus.o schd.o
+OBJS = ubus.o schd.o signal.o service.o
 all: schd
 
 
